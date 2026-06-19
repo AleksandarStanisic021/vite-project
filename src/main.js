@@ -4,6 +4,7 @@ import "./style.css";
 
 import vertex from "./shaders/vert.glsl?raw";
 import fragment from "./shaders/frag.glsl?raw";
+import { color } from "three/tsl";
 
 const scene = new THREE.Scene();
 
@@ -31,7 +32,10 @@ const geometry = new THREE.PlaneGeometry(10, 10, 64, 64);
 const material = new THREE.ShaderMaterial({
   vertexShader: vertex,
   fragmentShader: fragment,
-  uniforms: uniforms,
+  uniforms: {
+    color1: { value: new THREE.Vector4(1, 1, 0, 1) },
+    color2: { value: new THREE.Vector4(1, 0, 1, 1) },
+  },
   side: THREE.DoubleSide,
 });
 
@@ -49,7 +53,7 @@ const clock = new THREE.Clock();
 
 function animate() {
   requestAnimationFrame(animate);
-  material.uniforms.uTime.value = clock.getElapsedTime();
+
   controls.update();
   renderer.render(scene, camera);
 }
