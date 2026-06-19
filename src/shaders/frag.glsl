@@ -1,7 +1,7 @@
  varying  vec2 vUvs;
+ uniform float uTime;
 
 void main() {
-    
-    vec3 color = vec3(vUvs.x,vUvs.y,0.0);
-    gl_FragColor = vec4(1.0-color, 1.0);
+    vec3 color = vec3(vUvs.x*uTime,vUvs.y,sin(uTime));
+    gl_FragColor = vec4(color, 1.0);
 }

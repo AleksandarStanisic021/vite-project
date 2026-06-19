@@ -2,13 +2,11 @@ import * as THREE from "three";
 import { OrbitControls } from "three/addons/controls/OrbitControls.js";
 import "./style.css";
 
-// Uvoz šejdera kao običan tekst pomoću ?raw sufiksa
 import vertex from "./shaders/vert.glsl?raw";
 import fragment from "./shaders/frag.glsl?raw";
 
 const scene = new THREE.Scene();
 
-// 2. Kreiranje kamere
 const camera = new THREE.PerspectiveCamera(
   75,
   window.innerWidth / window.innerHeight,
@@ -51,9 +49,10 @@ const clock = new THREE.Clock();
 
 function animate() {
   requestAnimationFrame(animate);
-  uniforms.uTime.value = clock.getElapsedTime();
+  material.uniforms.uTime.value = clock.getElapsedTime();
   controls.update();
   renderer.render(scene, camera);
+  console.log(material.uniforms.uTime.value);
 }
 
 animate();
