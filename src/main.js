@@ -6,6 +6,10 @@ import vertex from "./shaders/vert.glsl?raw";
 import fragment from "./shaders/frag.glsl?raw";
 import { color } from "three/tsl";
 
+const loader = new THREE.TextureLoader();
+const texture = loader.load("./dog.jpg");
+console.log(texture);
+
 const scene = new THREE.Scene();
 
 const camera = new THREE.PerspectiveCamera(
@@ -34,7 +38,7 @@ const material = new THREE.ShaderMaterial({
   fragmentShader: fragment,
   uniforms: {
     color1: { value: new THREE.Vector4(1, 1, 0, 1) },
-    color2: { value: new THREE.Vector4(1, 0, 1, 1) },
+    color2: { value: new THREE.Vector4(0, 1, 1, 1) },
   },
   side: THREE.DoubleSide,
 });
