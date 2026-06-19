@@ -2,6 +2,6 @@
 
 void main() {
     
-    vec3 color = vec3(vUvs.x,vUvs.y,1.0);
+    vec3 color = vec3(vUvs.x,vUvs.y,0.0);
     gl_FragColor = vec4(1.0-color, 1.0);
 }
