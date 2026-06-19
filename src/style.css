@@ -1,32 +1,7 @@
-html,
-body {
+* {
+  background-color: #111111;
   margin: 0;
   padding: 0;
-  width: 100%;
-  height: 100%;
-  overflow: hidden; /* Sprečava pojavu skrol traka */
-  background-color: #111111; /* Tamna pozadina dok se Three.js ne učita */
+  overflow: hidden;
   font-family: sans-serif;
-}
-
-/* Podešavanja za sam 3D platno (canvas) */
-canvas {
-  display: block; /* Uklanja podrazumevani inline prostor ispod platna */
-  width: 100vw;
-  height: 100vh;
-  position: absolute;
-  top: 0;
-  left: 0;
-  outline: none; /* Uklanja outline kada klikneš na scenu */
-}
-
-/* Korisno ako želiš tekst ili UI preko 3D scene */
-.ui-kontejner {
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  color: white;
-  z-index: 10; /* Osigurava da tekst bude iznad 3D platna */
-  pointer-events: none; /* Dozvoljava klikove kroz tekst na samu scenu */
-  user-select: none; /* Sprečava plavo selektovanje teksta tokom mrdanja miša */
 }

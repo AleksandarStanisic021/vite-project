@@ -5,7 +5,6 @@ import { OrbitControls } from "three/addons/controls/OrbitControls.js";
 import vertex from "./shaders/vert.glsl?raw";
 import fragment from "./shaders/frag.glsl?raw";
 
-// 1. Kreiranje scene
 const scene = new THREE.Scene();
 
 // 2. Kreiranje kamere
@@ -47,18 +46,12 @@ window.addEventListener("resize", () => {
   renderer.setSize(window.innerWidth, window.innerHeight);
 });
 
-// Sat za praćenje vremena
 const clock = new THREE.Clock();
 
 function animate() {
   requestAnimationFrame(animate);
-
-  // Ažuriranje vremena za šejder animaciju
   uniforms.uTime.value = clock.getElapsedTime();
-
-  // Ažuriranje kontrola miša
   controls.update();
-
   renderer.render(scene, camera);
 }
 
