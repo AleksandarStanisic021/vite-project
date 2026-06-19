@@ -1,5 +1,6 @@
 import * as THREE from "three";
 import { OrbitControls } from "three/addons/controls/OrbitControls.js";
+import "./style.css";
 
 // Uvoz šejdera kao običan tekst pomoću ?raw sufiksa
 import vertex from "./shaders/vert.glsl?raw";
