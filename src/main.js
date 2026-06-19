@@ -52,7 +52,6 @@ function animate() {
   material.uniforms.uTime.value = clock.getElapsedTime();
   controls.update();
   renderer.render(scene, camera);
-  console.log(material.uniforms.uTime.value);
 }
 
 animate();
